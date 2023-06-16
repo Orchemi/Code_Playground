@@ -28,6 +28,10 @@ const Docs: FC = () => {
             name={'1.1. Next13 프로젝트 폴더 구조'}
           />
           <SiteLink href={'https://velog.io/@rmaomina/prettier-eslint-settings'} name={'1.2. Prettier, ESLint 설정'} />
+          <SiteLink
+            href={'https://flamingotiger.github.io/frontend/react/nextjs-absolute-path/'}
+            name={'1.3. Next.js에서 절대경로 alias 설정'}
+          />
         </ul>
       </div>
     </main>
