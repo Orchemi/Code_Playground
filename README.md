@@ -14,5 +14,5 @@
 
 > 프로젝트 세팅
 
-- ESLint, 절대경로 alias 설정
+- prettier, ESLint, 절대경로 alias 설정
 - RTL, Emotion install 
