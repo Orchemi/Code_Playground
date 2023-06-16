@@ -3,8 +3,9 @@
 ## 실습 목표
 
 - RTL을 적극적으로 활용해본다.
-- Next13 프로젝트를 세팅해본다. 
-- ESLint, 절대경로 alias, Emotion 활용을 경험한다.
+- Next13 프로젝트를 세팅해본다.
+- prettier, ESLint, 절대경로 alias를 설정한다.
+- emotion/styled, recoil 활용을 경험한다.
 
 <br>
 
@@ -12,7 +13,7 @@
 
 ### [sprint/1-1] 프로젝트 세팅
 
-> 프로젝트 세팅
+> 프로젝트 초기 세팅
 
 - prettier, ESLint, 절대경로 alias 설정
 - RTL, emotion, recoil 설치
