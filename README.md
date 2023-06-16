@@ -17,3 +17,4 @@
 
 - prettier, ESLint, 절대경로 alias 설정
 - RTL, emotion, recoil 설치
+- 기본 page 및 스타일 초기화
