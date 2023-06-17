@@ -16,6 +16,10 @@ const Docs: FC = () => {
           href={'https://flamingotiger.github.io/frontend/react/nextjs-absolute-path/'}
           name={'1.3. Next.js에서 절대경로 alias 설정'}
         />
+        <SiteLink
+          href={'https://velog.io/@s_sangs/CSS-in-JS-Stylelint-feat.-emotion-styled-components'}
+          name={'1.4. CSS-in-JS stylelint 설정'}
+        />
       </ul>
     </main>
   );
