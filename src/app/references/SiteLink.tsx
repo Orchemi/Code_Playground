@@ -1,4 +1,7 @@
+'use client';
+
 import { FC } from 'react';
+import { css } from '@emotion/react';
 
 interface SiteLinkProps {
   href: string;
@@ -8,7 +11,7 @@ interface SiteLinkProps {
 
 const SiteLink: FC<SiteLinkProps> = ({ href, name, isBlank = true }) => {
   return (
-    <li>
+    <li css={listStyle}>
       <a target={isBlank ? '_blank' : ''} href={href}>
         {name}
       </a>
@@ -17,3 +20,11 @@ const SiteLink: FC<SiteLinkProps> = ({ href, name, isBlank = true }) => {
 };
 
 export default SiteLink;
+
+const listStyle = css`
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+`;
