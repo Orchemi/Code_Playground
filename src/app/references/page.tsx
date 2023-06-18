@@ -1,24 +1,55 @@
-import { FC } from 'react';
-import SiteLink from '@/app/references/SiteLink';
+'use client';
 
-const Docs: FC = () => {
+import { SiteLinkList } from '@/app/references/SiteLink';
+import { css } from '@emotion/react';
+import { NextPage } from 'next';
+import { projectSetting, studyLibrary } from '@/app/references/data';
+
+const Docs: NextPage = () => {
   return (
-    <main>
+    <main css={containerStyle}>
       <h1>참고자료</h1>
       <h2>1. 프로젝트 설정</h2>
-      <ul>
-        <SiteLink
-          href={'https://velog.io/@brgndy/Next.js-13-%EB%9D%BC%EC%9A%B0%ED%8C%85'}
-          name={'1.1. Next13 프로젝트 폴더 구조'}
-        />
-        <SiteLink href={'https://velog.io/@rmaomina/prettier-eslint-settings'} name={'1.2. Prettier, ESLint 설정'} />
-        <SiteLink
-          href={'https://flamingotiger.github.io/frontend/react/nextjs-absolute-path/'}
-          name={'1.3. Next.js에서 절대경로 alias 설정'}
-        />
-      </ul>
+      <SiteLinkList links={projectSetting} />
+
+      <h2>2. 라이브러리 적응기</h2>
+      <h3>2.1. emotion</h3>
+      <SiteLinkList links={studyLibrary} />
     </main>
   );
 };
 
 export default Docs;
+
+const containerStyle = css`
+  padding: 0 50px;
+  margin: 0 auto;
+  min-width: 800px;
+  max-width: 2000px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    > li:last-child {
+      margin-bottom: 50px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin: 30px 0 20px 0;
+    font-weight: 700;
+    font-size: 28px;
+  }
+
+  h3 {
+    margin: 20px 0 10px 0;
+    font-weight: 500;
+    font-size: 20px;
+  }
+`;
