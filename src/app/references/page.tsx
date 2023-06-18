@@ -22,8 +22,8 @@ const Docs: NextPage = () => {
 export default Docs;
 
 const containerStyle = css`
+  padding: 0 50px;
   margin: 0 auto;
-  width: 100%;
   min-width: 800px;
   max-width: 2000px;
 

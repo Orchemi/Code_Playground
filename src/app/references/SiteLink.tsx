@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import { css } from '@emotion/react';
 import { SiteLinkType } from '@/app/references/data';
+import { COLORS } from '@styles/colors';
 
 interface SiteLinksProps {
   links: SiteLinkType[];
@@ -29,16 +30,16 @@ export default SiteLink;
 const anchorStyle = css`
   display: block;
   padding: 18px;
-  background-color: #f0f0f0;
-  color: black;
+  background-color: ${COLORS.gray50};
   border-radius: 6px;
+  margin: 0 10px;
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: #e5e5e5;
+    background-color: ${COLORS.gray100};
   }
 
   &:visited {
-    color: black;
+    color: ${COLORS.main};
   }
 `;
