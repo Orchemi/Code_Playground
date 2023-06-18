@@ -2,6 +2,7 @@
 
 import { FC, useState } from 'react';
 import useTodoList from '@components/todoList/useTodoList';
+import { TodoInputCss } from '@components/todoList/styles';
 
 const TodoInput: FC = () => {
   const { createTodo } = useTodoList();
@@ -14,7 +15,7 @@ const TodoInput: FC = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} css={TodoInputCss}>
       <input
         type="text"
         value={writingTodoValue}

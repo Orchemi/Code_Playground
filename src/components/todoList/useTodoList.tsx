@@ -18,8 +18,23 @@ const useTodoList = () => {
     setLatestTodoId(latestTodoId + 1);
   };
 
+  const changeTodoStatus = (id: number) => {
+    const newTodoList = todoList.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          isDone: !todo.isDone,
+        };
+      } else {
+        return todo;
+      }
+    });
+    setTodoList(newTodoList);
+  };
+
   return {
     createTodo,
+    changeTodoStatus,
     todoList,
   };
 };
