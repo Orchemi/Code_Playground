@@ -4,6 +4,7 @@ export const COLORS = {
   gray50: '#F8F9FA',
   black: '#FFF',
   guide: '#00C8FF',
+  main: '#495057', // gray700
 
   // gray
   gray100: '#F1F3F5',
