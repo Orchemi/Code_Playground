@@ -34,4 +34,8 @@ export const studyLibrary: SiteLinkType[] = [
     href: 'https://velog.io/@favorcho/Emotion-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0',
     name: 'emotion 소개 및 사용하기',
   },
+  {
+    href: 'https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0#5%EF%B8%8F%E2%83%A3---%EC%95%84%EC%A7%81-%EB%AF%B8%ED%9D%A1%ED%95%9C-devtools-%EA%B7%B8%EB%A6%AC%EA%B3%A0-snapshot',
+    name: 'Recoil 200% 활용하기',
+  },
 ];
