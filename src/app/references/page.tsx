@@ -4,8 +4,9 @@ import { SiteLinkList } from '@/app/references/SiteLink';
 import { css } from '@emotion/react';
 import { NextPage } from 'next';
 import { projectSetting, studyLibrary } from '@/app/references/data';
+import { commonContainerStyle } from '@styles/common';
 
-const Docs: NextPage = () => {
+const References: NextPage = () => {
   return (
     <main css={containerStyle}>
       <h1>참고자료</h1>
@@ -19,14 +20,10 @@ const Docs: NextPage = () => {
   );
 };
 
-export default Docs;
+export default References;
 
 const containerStyle = css`
-  padding: 0 50px;
-  margin: 0 auto;
-  min-width: 800px;
-  max-width: 2000px;
-
+  ${commonContainerStyle}
   ul {
     display: flex;
     flex-direction: column;
@@ -35,21 +32,5 @@ const containerStyle = css`
     > li:last-child {
       margin-bottom: 50px;
     }
-  }
-
-  h1 {
-    margin-bottom: 30px;
-  }
-
-  h2 {
-    margin: 30px 0 20px 0;
-    font-weight: 700;
-    font-size: 28px;
-  }
-
-  h3 {
-    margin: 20px 0 10px 0;
-    font-weight: 500;
-    font-size: 20px;
   }
 `;

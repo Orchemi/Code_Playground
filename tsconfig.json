@@ -37,6 +37,9 @@
       "@utils/*": [
         "./src/utils/*"
       ],
+      "@stores/*": [
+        "./src/stores/*"
+      ],
       "@hooks/*": [
         "./src/hooks/*"
       ],
