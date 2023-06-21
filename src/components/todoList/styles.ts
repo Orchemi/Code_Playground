@@ -4,14 +4,31 @@ import { COLORS } from '@styles/colors';
 
 export const todoListCss = css`
   margin: 20px 0;
+  border: 1px solid ${COLORS.gray400};
+  border-radius: 10px;
+  overflow: hidden;
+
+  & > li {
+    border-top: 1px solid ${COLORS.gray400};
+
+    &:first-child {
+      border-top: none;
+    }
+  }
 `;
 
 export const todoCss = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 40px;
+  height: 50px;
   color: ${COLORS.main};
+  padding: 0 20px;
+  background: ${COLORS.white};
+
+  &:hover {
+    background: ${COLORS.gray50};
+  }
 
   & > div {
     display: flex;
