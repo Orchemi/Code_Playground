@@ -60,19 +60,31 @@ export const TodoInputCss = css`
   display: flex;
   gap: 10px;
   height: 40px;
+`;
 
-  input {
-    width: 100%;
-    flex-shrink: 1;
-    padding: 0 10px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 0 0 1px ${COLORS.gray600};
+export const todoInputCss = css`
+  width: 100%;
+  flex-shrink: 1;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px ${COLORS.gray600};
 
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px ${COLORS.gray600};
-    }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${COLORS.gray600};
+  }
+`;
+
+export const todoUpdateInputCss = css`
+  ${todoInputCss};
+  font-size: 16px;
+  color: ${COLORS.main};
+  height: 35px;
+  width: calc(100% - 80px);
+
+  &:focus {
+    box-shadow: 0 0 0 1px ${COLORS.main};
   }
 `;
 

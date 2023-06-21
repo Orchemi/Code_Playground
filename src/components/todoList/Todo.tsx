@@ -1,11 +1,10 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { TodoType } from '@components/todoList/types';
-import { todoButtonContainerCss, todoContentCss, todoCss } from '@components/todoList/styles';
+import { todoButtonContainerCss, todoContentCss, todoCss, todoUpdateInputCss } from '@components/todoList/styles';
 import { COLORS } from '@styles/colors';
 import { commonButtonCss } from '@styles/common';
-import useTodo from '@components/todoList/useTodo';
 import useTodoList from '@components/todoList/useTodoList';
 
 interface TodoButtonProps {
@@ -23,32 +22,65 @@ const TodoButton: FC<TodoButtonProps> = ({ color, onClick, children }) => {
 };
 
 const Todo: FC<TodoType> = ({ id, content, isDone }) => {
-  const { changeTodoStatus, deleteTodo } = useTodoList(id);
-  const { isChangingTodoContent, changeTodoEditStatus } = useTodo();
+  const {
+    changeTodoStatus,
+    deleteTodo,
+    updatingTodoValue,
+    setUpdatingTodoValue,
+    updatingTodoId,
+    beginTodoContentChange,
+    resetUpdateTodoContent,
+    completeUpdateTodoContent,
+  } = useTodoList(id);
+  const [isUpdatingTodoContent, setIsUpdatingTodoContent] = useState(false);
+
+  useEffect(() => {
+    setIsUpdatingTodoContent(updatingTodoId === id);
+  }, [updatingTodoId]);
+
+  const onClickEditButton = () => {
+    beginTodoContentChange(content);
+  };
+
+  const onChangeUpdatingTodoContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setUpdatingTodoValue(e.target.value);
+  };
 
   return (
     <li css={todoCss}>
-      <div css={todoContentCss(isDone)} onClick={changeTodoStatus}>
-        <input type="checkbox" checked={isDone} onChange={changeTodoStatus} />
-        <span>{content}</span>
-      </div>
-
-      {isChangingTodoContent ? (
-        <div css={todoButtonContainerCss}>
-          <TodoButton color={COLORS.gray500} onClick={changeTodoEditStatus}>
-            취소
-          </TodoButton>
-          <span css={commonButtonCss({ color: COLORS.blue500 })}>완료</span>
-        </div>
+      {isUpdatingTodoContent ? (
+        <>
+          <input
+            css={todoUpdateInputCss}
+            type="text"
+            value={updatingTodoValue}
+            onChange={onChangeUpdatingTodoContent}
+          />
+          <div css={todoButtonContainerCss}>
+            <TodoButton color={COLORS.blue500} onClick={completeUpdateTodoContent}>
+              완료
+            </TodoButton>
+            <TodoButton color={COLORS.gray500} onClick={resetUpdateTodoContent}>
+              취소
+            </TodoButton>
+          </div>
+        </>
       ) : (
-        <div css={todoButtonContainerCss}>
-          <TodoButton color={COLORS.green500} onClick={changeTodoEditStatus}>
-            수정
-          </TodoButton>
-          <TodoButton color={COLORS.red500} onClick={deleteTodo}>
-            삭제
-          </TodoButton>
-        </div>
+        <>
+          <div css={todoContentCss(isDone)} onClick={changeTodoStatus}>
+            <input type="checkbox" checked={isDone} onChange={changeTodoStatus} />
+            <span>{content}</span>
+          </div>
+          <div css={todoButtonContainerCss}>
+            <TodoButton color={COLORS.green500} onClick={onClickEditButton}>
+              수정
+            </TodoButton>
+            <TodoButton color={COLORS.red500} onClick={deleteTodo}>
+              삭제
+            </TodoButton>
+          </div>
+        </>
       )}
     </li>
   );

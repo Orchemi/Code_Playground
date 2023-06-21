@@ -2,7 +2,7 @@
 
 import { FC, useState } from 'react';
 import useTodoList from '@components/todoList/useTodoList';
-import { TodoInputCss, todoAddButtonCss } from '@components/todoList/styles';
+import { TodoInputCss, todoAddButtonCss, todoInputCss } from '@components/todoList/styles';
 
 const TodoInput: FC = () => {
   const { createTodo } = useTodoList();
@@ -10,6 +10,8 @@ const TodoInput: FC = () => {
 
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    if (!writingTodoValue) return;
+
     createTodo(writingTodoValue);
     setWritingTodoValue('');
   };
@@ -17,6 +19,7 @@ const TodoInput: FC = () => {
   return (
     <form onSubmit={onSubmit} css={TodoInputCss}>
       <input
+        css={todoInputCss}
         type="text"
         value={writingTodoValue}
         onChange={(e) => {
