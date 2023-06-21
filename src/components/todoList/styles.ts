@@ -113,3 +113,21 @@ export const deleteAllTodoButtonCss = css`
   width: auto;
   padding: 0 10px;
 `;
+
+export const todoProgressBarCss = (progressPercent: number) => css`
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 10px;
+  background: ${COLORS.gray100};
+  margin-top: 20px;
+  border-radius: 10000px;
+  overflow: hidden;
+
+  & > div {
+    width: ${progressPercent}%;
+    height: 100%;
+    background: ${COLORS.red500};
+    transition: width 0.3s ease-in-out;
+  }
+`;

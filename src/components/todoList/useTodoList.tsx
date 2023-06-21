@@ -7,6 +7,7 @@ const useTodoList = (id?: number) => {
   const [latestTodoId, setLatestTodoId] = useState<number>(0);
   const [updatingTodoId, setUpdatingTodoId] = useState<number | null>(null);
   const [updatingTodoValue, setUpdatingTodoValue] = useState<string>('');
+  const [progressPercent, setProgressPercent] = useState<number>(0);
 
   useEffect(() => {
     const findLatestTodoId = () => Math.max(...todoList.map((todo) => todo.id), 0);
@@ -15,7 +16,14 @@ const useTodoList = (id?: number) => {
 
   useEffect(() => {
     const refreshTodoListInLocalStorage = () => localStorage.setItem('todoList', JSON.stringify(todoList));
+    const calcProgressPercent = () => {
+      const doneTodoCount = todoList.filter((todo) => todo.isDone).length;
+      const totalTodoCount = todoList.length;
+      setProgressPercent((doneTodoCount / totalTodoCount) * 100);
+    };
+
     refreshTodoListInLocalStorage();
+    calcProgressPercent();
   }, [todoList]);
 
   const createTodo = async (content: string) => {
@@ -47,9 +55,7 @@ const useTodoList = (id?: number) => {
 
   const beginTodoContentChange = (currentContent: string) => {
     if (id === undefined) return;
-    if (updatingTodoId) {
-      // TODO 수정중이던 Todo 값 rollback하고 새로운 Todo 수정 시작
-    }
+    if (updatingTodoId) return;
 
     setUpdatingTodoValue(currentContent);
     setUpdatingTodoId(id);
@@ -104,6 +110,7 @@ const useTodoList = (id?: number) => {
   };
 
   return {
+    progressPercent,
     createTodo,
     changeTodoStatus,
     todoList,
