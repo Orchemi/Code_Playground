@@ -1,11 +1,22 @@
+import { todoListState } from '@stores/todoList';
+import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { latestTodoIdState, todoListState } from '@stores/todoList';
 
 const useTodoList = () => {
   const [todoList, setTodoList] = useRecoilState(todoListState);
-  const [latestTodoId, setLatestTodoId] = useRecoilState(latestTodoIdState);
+  const [latestTodoId, setLatestTodoId] = useState(0);
 
-  const createTodo = (content: string) => {
+  useEffect(() => {
+    const findLatestTodoId = () => Math.max(...todoList.map((todo) => todo.id), 0);
+    setLatestTodoId(findLatestTodoId());
+  }, []);
+
+  useEffect(() => {
+    const refreshTodoListInLocalStorage = () => localStorage.setItem('todoList', JSON.stringify(todoList));
+    refreshTodoListInLocalStorage();
+  }, [todoList]);
+
+  const createTodo = async (content: string) => {
     const newTodoList = [
       ...todoList,
       {
@@ -18,7 +29,7 @@ const useTodoList = () => {
     setLatestTodoId(latestTodoId + 1);
   };
 
-  const changeTodoStatus = (id: number) => {
+  function changeTodoStatus(id: number) {
     const newTodoList = todoList.map((todo) => {
       if (todo.id === id) {
         return {
@@ -30,12 +41,19 @@ const useTodoList = () => {
       }
     });
     setTodoList(newTodoList);
+  }
+
+  const deleteAllTodo = () => {
+    setTodoList([]);
+    setLatestTodoId(0);
   };
 
   return {
     createTodo,
     changeTodoStatus,
     todoList,
+    setTodoList,
+    deleteAllTodo,
   };
 };
 

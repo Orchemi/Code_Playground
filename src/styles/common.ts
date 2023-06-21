@@ -6,3 +6,14 @@ export const commonContainerStyle = css`
   min-width: 800px;
   max-width: 2000px;
 `;
+
+export interface commonButtonProps {
+  color: string;
+}
+export const commonButtonCss = ({ color }: commonButtonProps) => css`
+  color: ${color};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
