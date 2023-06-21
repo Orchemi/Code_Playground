@@ -20,7 +20,7 @@ const useTodoList = (id: number | undefined) => {
     const newTodoList = [
       ...todoList,
       {
-        id: latestTodoId,
+        id: latestTodoId + 1,
         content,
         isDone: false,
       },
