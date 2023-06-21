@@ -1,3 +1,4 @@
+import { commonButtonCss } from '@/styles/common';
 import { css } from '@emotion/react';
 import { COLORS } from '@styles/colors';
 
@@ -56,12 +57,30 @@ export const TodoInputCss = css`
       box-shadow: 0 0 0 2px ${COLORS.gray600};
     }
   }
+`;
 
-  button {
-    width: 60px;
-    background: ${COLORS.lime800};
-    border: 1px solid ${COLORS.lime900};
-    border-radius: 4px;
-    color: ${COLORS.white};
-  }
+export const todoAddButtonCss = css`
+  width: 60px;
+  background: ${COLORS.lime800};
+  border: 1px solid ${COLORS.lime900};
+  border-radius: 4px;
+  color: ${COLORS.white};
+`;
+
+export const todoHeaderCss = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  background: ${COLORS.gray100};
+`;
+
+export const deleteAllTodoButtonCss = css`
+  ${commonButtonCss({})};
+  ${todoAddButtonCss};
+  height: 40px;
+  width: auto;
+  padding: 0 10px;
 `;

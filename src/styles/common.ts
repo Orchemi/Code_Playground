@@ -8,7 +8,7 @@ export const commonContainerStyle = css`
 `;
 
 export interface commonButtonProps {
-  color: string;
+  color?: string;
 }
 export const commonButtonCss = ({ color }: commonButtonProps) => css`
   color: ${color};

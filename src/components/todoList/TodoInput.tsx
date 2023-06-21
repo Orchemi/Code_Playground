@@ -2,7 +2,7 @@
 
 import { FC, useState } from 'react';
 import useTodoList from '@components/todoList/useTodoList';
-import { TodoInputCss } from '@components/todoList/styles';
+import { TodoInputCss, todoAddButtonCss } from '@components/todoList/styles';
 
 const TodoInput: FC = () => {
   const { createTodo } = useTodoList();
@@ -24,7 +24,7 @@ const TodoInput: FC = () => {
           setWritingTodoValue(e.target.value);
         }}
       />
-      <button type={'button'} onClick={onSubmit}>
+      <button css={todoAddButtonCss} type={'button'} onClick={onSubmit}>
         추가
       </button>
     </form>

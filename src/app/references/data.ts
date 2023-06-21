@@ -15,6 +15,10 @@ export const projectSetting: SiteLinkType[] = [
     name: 'Next.js에서 절대경로 alias 설정',
   },
   {
+    href: 'https://seungtaek-overflow.tistory.com/17',
+    name: 'VSCode에서 절대경로 alias가 적용되지 않을 때 해결방법',
+  },
+  {
     href: 'https://velog.io/@rmaomina/prettier-eslint-settings',
     name: 'Prettier, ESLint 설정',
   },

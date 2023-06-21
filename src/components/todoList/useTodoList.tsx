@@ -2,7 +2,7 @@ import { todoListState } from '@stores/todoList';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 
-const useTodoList = (id: number | undefined) => {
+const useTodoList = (id?: number) => {
   const [todoList, setTodoList] = useRecoilState(todoListState);
   const [latestTodoId, setLatestTodoId] = useState(0);
 
