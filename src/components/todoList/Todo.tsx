@@ -23,17 +23,13 @@ const TodoButton: FC<TodoButtonProps> = ({ color, onClick, children }) => {
 };
 
 const Todo: FC<TodoType> = ({ id, content, isDone }) => {
-  const { changeTodoStatus } = useTodoList();
+  const { changeTodoStatus, deleteTodo } = useTodoList(id);
   const { isChangingTodoContent, changeTodoEditStatus } = useTodo();
-
-  const onChangeTodoStatus = () => {
-    changeTodoStatus(id);
-  };
 
   return (
     <li css={todoCss}>
-      <div css={todoContentCss(isDone)} onClick={onChangeTodoStatus}>
-        <input type="checkbox" checked={isDone} onChange={onChangeTodoStatus} />
+      <div css={todoContentCss(isDone)} onClick={changeTodoStatus}>
+        <input type="checkbox" checked={isDone} onChange={changeTodoStatus} />
         <span>{content}</span>
       </div>
 
@@ -49,7 +45,9 @@ const Todo: FC<TodoType> = ({ id, content, isDone }) => {
           <TodoButton color={COLORS.green500} onClick={changeTodoEditStatus}>
             수정
           </TodoButton>
-          <span css={commonButtonCss({ color: COLORS.red500 })}>삭제</span>
+          <TodoButton color={COLORS.red500} onClick={deleteTodo}>
+            삭제
+          </TodoButton>
         </div>
       )}
     </li>

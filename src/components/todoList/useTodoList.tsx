@@ -2,7 +2,7 @@ import { todoListState } from '@stores/todoList';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 
-const useTodoList = () => {
+const useTodoList = (id: number | undefined) => {
   const [todoList, setTodoList] = useRecoilState(todoListState);
   const [latestTodoId, setLatestTodoId] = useState(0);
 
@@ -29,7 +29,7 @@ const useTodoList = () => {
     setLatestTodoId(latestTodoId + 1);
   };
 
-  function changeTodoStatus(id: number) {
+  const changeTodoStatus = () => {
     const newTodoList = todoList.map((todo) => {
       if (todo.id === id) {
         return {
@@ -41,7 +41,12 @@ const useTodoList = () => {
       }
     });
     setTodoList(newTodoList);
-  }
+  };
+
+  const deleteTodo = () => {
+    const newTodoList = todoList.filter((todo) => todo.id !== id);
+    setTodoList(newTodoList);
+  };
 
   const deleteAllTodo = () => {
     setTodoList([]);
@@ -53,6 +58,7 @@ const useTodoList = () => {
     changeTodoStatus,
     todoList,
     setTodoList,
+    deleteTodo,
     deleteAllTodo,
   };
 };
