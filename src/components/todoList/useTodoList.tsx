@@ -1,9 +1,18 @@
 import { useRecoilState } from 'recoil';
 import { latestTodoIdState, todoListState } from '@stores/todoList';
+import { useEffect } from 'react';
 
 const useTodoList = () => {
   const [todoList, setTodoList] = useRecoilState(todoListState);
   const [latestTodoId, setLatestTodoId] = useRecoilState(latestTodoIdState);
+
+  useEffect(() => {
+    refreshTodoListInLocalStorage();
+  }, [todoList]);
+
+  const refreshTodoListInLocalStorage = () => {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+  };
 
   const createTodo = (content: string) => {
     const newTodoList = [
@@ -30,12 +39,15 @@ const useTodoList = () => {
       }
     });
     setTodoList(newTodoList);
+    refreshTodoListInLocalStorage();
   };
 
   return {
     createTodo,
     changeTodoStatus,
     todoList,
+    setTodoList,
+    refreshTodoListInLocalStorage,
   };
 };
 

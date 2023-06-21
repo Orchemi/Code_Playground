@@ -1,12 +1,12 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import useTodoList from '@components/todoList/useTodoList';
 import Todo from '@components/todoList/Todo';
 import { todoListCss } from '@components/todoList/styles';
 
 const TodoList: FC = () => {
-  const { todoList } = useTodoList();
+  const { todoList, setTodoList } = useTodoList();
 
   return (
     <ul css={todoListCss}>

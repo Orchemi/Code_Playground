@@ -5,13 +5,21 @@ export const todoListCss = css`
   margin: 20px 0;
 `;
 
-export const todoCss = (isDone: boolean) => css`
+export const todoCss = css`
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
   height: 40px;
   color: ${COLORS.main};
 
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+`;
+
+export const todoContentCss = (isDone: boolean) => css`
   input {
     width: 20px;
     aspect-ratio: 1/1;
@@ -21,6 +29,14 @@ export const todoCss = (isDone: boolean) => css`
     text-decoration: ${isDone ? 'line-through' : 'none'};
   }
 `;
+
+export const todoButtonContainerCss = css`
+  & > button:hover {
+    cursor: pointer;
+  }
+`;
+
+export const todoInputContainerCss = css``;
 
 export const TodoInputCss = css`
   display: flex;
