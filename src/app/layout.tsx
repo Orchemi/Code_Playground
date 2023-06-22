@@ -3,6 +3,7 @@
 import './globals.css';
 import GlobalNavBar from '@components/navbar/GlobalNavBar';
 import { css } from '@emotion/react';
+import { RecoilRoot } from 'recoil';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <GlobalNavBar />
-        <div css={globalLayoutCss}>{children}</div>
+        <RecoilRoot>
+          <div css={globalLayoutCss}>{children}</div>
+        </RecoilRoot>
       </body>
     </html>
   );

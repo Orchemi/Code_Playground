@@ -6,6 +6,10 @@ export const globalNavbarLinks: SiteLinkType[] = [
     name: 'Home',
   },
   {
+    href: '/projects',
+    name: 'Projects',
+  },
+  {
     href: '/references',
     name: 'References',
   },

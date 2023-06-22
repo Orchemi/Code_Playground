@@ -1,28 +1,16 @@
 {
-  "extends": [
-    "stylelint-config-standard"
-  ],
-  "plugins": [
-    "stylelint-order"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "plugins": ["stylelint-order"],
   "customSyntax": "postcss-styled-syntax",
   "rules": {
     "_comment": "↓ css 속성 작성 시 empty line 관련 설정",
     "declaration-empty-line-before": [
       "always",
       {
-        "ignore": [
-          "first-nested",
-          "after-comment",
-          "after-declaration",
-          "inside-single-line-block"
-        ]
+        "ignore": ["first-nested", "after-comment", "after-declaration", "inside-single-line-block"]
       }
     ],
-    "order/order": [
-      "custom-properties",
-      "declarations"
-    ],
+    "order/order": ["custom-properties", "declarations"],
     "_comment": "↓ css 속성 그룹 및 순서 설정",
     "order/properties-order": [
       {
@@ -69,9 +57,7 @@
         "groupName": "Background",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": [
-          "background-color"
-        ]
+        "properties": ["background-color"]
       },
       {
         "groupName": "Font",
@@ -94,9 +80,7 @@
         "groupName": "Animation",
         "emptyLineBefore": "always",
         "noEmptyLineBetween": true,
-        "properties": [
-          "animation"
-        ]
+        "properties": ["animation"]
       }
     ]
   }

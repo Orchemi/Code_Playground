@@ -15,6 +15,10 @@ export const projectSetting: SiteLinkType[] = [
     name: 'Next.js에서 절대경로 alias 설정',
   },
   {
+    href: 'https://seungtaek-overflow.tistory.com/17',
+    name: 'VSCode에서 절대경로 alias가 적용되지 않을 때 해결방법',
+  },
+  {
     href: 'https://velog.io/@rmaomina/prettier-eslint-settings',
     name: 'Prettier, ESLint 설정',
   },
@@ -33,5 +37,9 @@ export const studyLibrary: SiteLinkType[] = [
   {
     href: 'https://velog.io/@favorcho/Emotion-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0',
     name: 'emotion 소개 및 사용하기',
+  },
+  {
+    href: 'https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0#5%EF%B8%8F%E2%83%A3---%EC%95%84%EC%A7%81-%EB%AF%B8%ED%9D%A1%ED%95%9C-devtools-%EA%B7%B8%EB%A6%AC%EA%B3%A0-snapshot',
+    name: 'Recoil 200% 활용하기',
   },
 ];

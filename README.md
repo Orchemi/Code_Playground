@@ -11,6 +11,13 @@
 
 ## 패치 노트
 
+### [sprint/1-3] recoil 적응: TodoList 제작
+
+- Todo의 추가(C), 수정(U), 삭제(D) 구현
+- 구현 과정에서 recoil 사용
+
+<br>
+
 ### [sprint/1-2] 라이브러리 적응 1차
 
 - emotion에 익숙해지기 : emotion을 활용해 reference 페이지 디자인 개선
