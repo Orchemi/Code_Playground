@@ -104,6 +104,11 @@ const useTodoList = (id?: number) => {
     setTodoList(newTodoList);
   };
 
+  const deleteDoneTodo = () => {
+    const newTodoList = todoList.filter((todo) => !todo.isDone);
+    setTodoList(newTodoList);
+  };
+
   const deleteAllTodo = () => {
     setTodoList([]);
     setLatestTodoId(0);
@@ -117,6 +122,7 @@ const useTodoList = (id?: number) => {
     setTodoList,
     updateTodoContent,
     deleteTodo,
+    deleteDoneTodo,
     deleteAllTodo,
     updatingTodoId,
     updatingTodoValue,
