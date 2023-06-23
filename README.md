@@ -11,6 +11,12 @@
 
 ## 패치 노트
 
+### [sprint/1-4] RTL 적응: TodoList 테스트 진행
+
+- TodoList의 각 컴포넌트에 대해 테스트 적용
+
+<br>
+
 ### [sprint/1-3] recoil 적응: TodoList 제작
 
 - Todo의 추가(C), 수정(U), 삭제(D) 구현
