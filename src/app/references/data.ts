@@ -42,4 +42,24 @@ export const studyLibrary: SiteLinkType[] = [
     href: 'https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0#5%EF%B8%8F%E2%83%A3---%EC%95%84%EC%A7%81-%EB%AF%B8%ED%9D%A1%ED%95%9C-devtools-%EA%B7%B8%EB%A6%AC%EA%B3%A0-snapshot',
     name: 'Recoil 200% 활용하기',
   },
+  {
+    href: 'https://github.com/testing-library/jest-dom#with-typescript',
+    name: 'RTL 적용 전 jest 세팅(공식문서)',
+  },
+  {
+    href: 'https://www.youtube.com/watch?v=mJn0B7mXmDI',
+    name: 'RTL 적용 전 jest 세팅',
+  },
+  {
+    href: 'https://recoiljs.org/docs/guides/testing/#testing-recoil-state-outside-of-react',
+    name: 'Recoil 테스팅: React 외부에서의 Testing(공식문서)',
+  },
+  {
+    href: 'https://stackoverflow.com/questions/72399944/how-to-test-state-managementrecoil-using-react-jest',
+    name: 'react jest에 recoil 적용(stack overflow)',
+  },
+  {
+    href: 'https://www.daleseo.com/react-testing-library',
+    name: 'RTL로 테스팅하기',
+  },
 ];
