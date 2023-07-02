@@ -11,6 +11,14 @@
 
 ## 패치 노트
 
+### [sprint/1-5] API 서버 및 DB 구축
+
+- API 서버는 Next API Routes를 활용
+- DB는 Sqlite를 활용
+- TodoList로 DB 저장 및 CRUD 진행
+
+<br>
+
 ### [sprint/1-4] RTL 적응: TodoList 테스트 진행
 
 - TodoList의 각 컴포넌트에 대해 테스트 적용
