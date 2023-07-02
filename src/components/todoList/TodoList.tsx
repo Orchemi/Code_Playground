@@ -1,13 +1,15 @@
 'use client';
 
 import { FC } from 'react';
-import useTodoList from '@components/todoList/useTodoList';
 import Todo from '@components/todoList/Todo';
 import { todoListCss } from '@components/todoList/styles';
+import { TodoType } from '@/components/todoList/types';
 
-const TodoList: FC = () => {
-  const { todoList } = useTodoList();
+interface Props {
+  todoList: TodoType[];
+}
 
+const TodoList: FC<Props> = ({ todoList }) => {
   return (
     <ul css={todoListCss}>
       {todoList.map(({ id, content, isDone }) => (
