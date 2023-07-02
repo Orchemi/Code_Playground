@@ -59,6 +59,10 @@ export const studyLibrary: SiteLinkType[] = [
     name: 'react jest에 recoil 적용(stack overflow)',
   },
   {
+    href: 'https://recoiljs.org/docs/guides/testing/#testing-recoil-state-inside-a-custom-hook',
+    name: 'Recoil 테스팅: Custom Hook 내부에서의 Testing(공식문서)',
+  },
+  {
     href: 'https://www.daleseo.com/react-testing-library',
     name: 'RTL로 테스팅하기',
   },
